@@ -3,7 +3,12 @@ function takeANumber(line, customer) {
   var place = line.indexOf(customer)+1;
   return `Welcome, ${customer}. You are number ${place} in line.`;
 }
-
+var customersServed = 0;
+function takeANumber2(line, customer) {
+  line.push(customer);
+  customersServed++;
+  return `You have ticket number ${customersServed}. You are number ${line.length} in line.`;
+}
 function nowServing(line) {
   if (line.length === 0) {
     return "There is nobody waiting to be served!";
